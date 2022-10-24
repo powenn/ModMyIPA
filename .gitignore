@@ -1,0 +1,5 @@
+Payload
+.DS_Store
+build
+*.ipa
+*.xcuserstate
