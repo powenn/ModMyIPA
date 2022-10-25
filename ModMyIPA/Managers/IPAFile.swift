@@ -30,6 +30,7 @@ class IPAFile:ObservableObject {
     @Published var app_bundle:String = ""
     @Published var app_min_ios:String = ""
     
+    @Published var processing:Bool = false
     
     func getPayloadURL()  {
         self.payloadURL = contentDirURL.appendingPathComponent("Payload")
@@ -93,19 +94,15 @@ class IPAFile:ObservableObject {
         plistDict!.write(toFile: infoPlistPath.path, atomically: false)
     }
     
-    func moveModdedPackage(){
+    func moveModdedPackage() {
         do {
-            
-            // ISSUE HERE
-            /*
-             couldn’t be moved to “Payload” because an item with the same name already exists.
-             */
-            
-            try FileManager.default.moveItem(at: payloadURL.appendingPathComponent(appNameInPayload), to: payloadURL.appendingPathComponent("\(app_executable).app"))
+            if appNameInPayload != "\(app_executable).app" {
+                try FileManager.default.moveItem(at: payloadURL.appendingPathComponent(appNameInPayload), to: payloadURL.appendingPathComponent("\(app_executable).app"))
+            }
+            if FileManager.default.fileExists(atPath: tmpDirectory.appendingPathComponent(app_executable).path){
+                try FileManager.default.removeItem(at: tmpDirectory.appendingPathComponent(app_executable))
+            }
             try FileManager.default.moveItem(at: contentDirURL, to: tmpDirectory.appendingPathComponent(app_executable))
-            
-            
-            
         } catch {
             print(error.localizedDescription)
         }
@@ -114,4 +111,9 @@ class IPAFile:ObservableObject {
     func zipToIPA() {
         SSZipArchive.createZipFile(atPath: outputDirectory.appendingPathComponent("\(app_executable).ipa").path,withContentsOfDirectory: tmpDirectory.appendingPathComponent(app_executable).path)
     }
+            
+    func resultIPAExist() -> Bool {
+        return FileManager.default.fileExists(atPath: outputDirectory.appendingPathComponent("\(app_executable).ipa").path)
+    }
+    
 }

@@ -9,12 +9,25 @@ import SwiftUI
 
 struct PackageListView: View {
     @State var packageList = try! FileManager.default.contentsOfDirectory(atPath: outputDirectory.path)
+    @State var showShareSheet:Bool = false
+    @State var selectedPackage:String = ""
     
     var body: some View {
         List {
             ForEach(packageList, id: \.self) { package in
-                Text(package)
-                    .font(.title3)
+                HStack{
+                    Text(package)
+                        .font(.title3)
+                    Spacer()
+                    Button("", action: {
+                        print("\(package) share tapped!")
+                        showShareSheet.toggle()
+                    }).sheet(isPresented: $showShareSheet, content: {
+                        ShareSheet(activityItems: [outputDirectory.appendingPathComponent(package)])
+                    })
+                }
+                .contentShape(Rectangle())
+                .padding()
             }
             .onDelete(perform: deleteItem)
         }
@@ -22,10 +35,12 @@ struct PackageListView: View {
     }
     
     func deleteItem(at indexSet: IndexSet) {
+        let tmpList = packageList
         packageList.remove(atOffsets: indexSet)
-        print(indexSet.first!)
-        // NEED TEST
-        try! FileManager.default.removeItem(atPath: outputDirectory.appendingPathComponent(packageList[indexSet.first!]).path)
+        let deleted:String = Set(tmpList).symmetricDifference(Set(packageList)).first!
+        try! FileManager.default.removeItem(atPath: outputDirectory.appendingPathComponent(deleted).path)
+        print("Deleted:\(deleted)")
+        print("Left:\(packageList)")
     }
 }
 
