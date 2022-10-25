@@ -99,9 +99,6 @@ class IPAFile:ObservableObject {
             if appNameInPayload != "\(app_executable).app" {
                 try FileManager.default.moveItem(at: payloadURL.appendingPathComponent(appNameInPayload), to: payloadURL.appendingPathComponent("\(app_executable).app"))
             }
-            if FileManager.default.fileExists(atPath: tmpDirectory.appendingPathComponent(app_executable).path){
-                try FileManager.default.removeItem(at: tmpDirectory.appendingPathComponent(app_executable))
-            }
             try FileManager.default.moveItem(at: contentDirURL, to: tmpDirectory.appendingPathComponent(app_executable))
         } catch {
             print(error.localizedDescription)
