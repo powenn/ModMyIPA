@@ -11,6 +11,24 @@ import ZipArchive
 class MyFileManager {
     private init() {}
     static let shared = MyFileManager()
+    
+    func setUpPath() {
+        if !FileManager.default.fileExists(atPath: tmpDirectory.path) {
+            try? FileManager.default.createDirectory(
+                at: tmpDirectory,
+                withIntermediateDirectories: true,
+                attributes: nil
+            )
+        }
+        if !FileManager.default.fileExists(atPath: outputDirectory.path) {
+            try? FileManager.default.createDirectory(
+                at: outputDirectory,
+                withIntermediateDirectories: true,
+                attributes: nil
+            )
+        }
+    }
+    
     func resetTmp() {
         try? FileManager.default.removeItem(at: tmpDirectory)
         try? FileManager.default.createDirectory(
@@ -19,6 +37,7 @@ class MyFileManager {
             attributes: nil
         )
     }
+    
     func resetOutput() {
         try? FileManager.default.removeItem(at: outputDirectory)
         try? FileManager.default.createDirectory(

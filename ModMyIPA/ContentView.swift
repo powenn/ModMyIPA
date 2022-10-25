@@ -21,6 +21,7 @@ struct ContentView: View {
                     })
                 })
         }.onAppear(perform: {
+            MyFileManager.shared.setUpPath()
             MyFileManager.shared.resetTmp()
         })
     }
