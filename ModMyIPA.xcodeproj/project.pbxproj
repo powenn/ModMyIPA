@@ -22,6 +22,7 @@
 		B58A5FC72906B89D00926816 /* ZipArchive in Frameworks */ = {isa = PBXBuildFile; productRef = B58A5FC62906B89D00926816 /* ZipArchive */; };
 		B58A5FC92906BA3500926816 /* IPAFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58A5FC82906BA3500926816 /* IPAFile.swift */; };
 		B58A5FCB2906E95E00926816 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58A5FCA2906E95E00926816 /* Extensions.swift */; };
+		B58A5FCD290763AC00926816 /* PackageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58A5FCC290763AB00926816 /* PackageListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		B58A5FC22906B15500926816 /* MyFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFileManager.swift; sourceTree = "<group>"; };
 		B58A5FC82906BA3500926816 /* IPAFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPAFile.swift; sourceTree = "<group>"; };
 		B58A5FCA2906E95E00926816 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		B58A5FCC290763AB00926816 /* PackageListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 				B58A5FB32906501F00926816 /* MainView.swift */,
 				B58A5FC02906B12400926816 /* SetAppInfoView.swift */,
 				B58A5FB12906500A00926816 /* InfoView.swift */,
+				B58A5FCC290763AB00926816 /* PackageListView.swift */,
 			);
 			name = Views;
 			path = ModMyIPA/Views;
@@ -208,6 +211,7 @@
 				B58A5FC92906BA3500926816 /* IPAFile.swift in Sources */,
 				B58A5FBA2906555000926816 /* FilePaths.swift in Sources */,
 				B58A5FB22906500A00926816 /* InfoView.swift in Sources */,
+				B58A5FCD290763AC00926816 /* PackageListView.swift in Sources */,
 				B58A5FC32906B15500926816 /* MyFileManager.swift in Sources */,
 				B58A5FC12906B12400926816 /* SetAppInfoView.swift in Sources */,
 				B58A5FCB2906E95E00926816 /* Extensions.swift in Sources */,

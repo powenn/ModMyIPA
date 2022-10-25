@@ -9,13 +9,22 @@ import SwiftUI
 
 struct InfoView: View {
     @StateObject var myuserdefaults:MyUserDefaults = .shared
+    @State var showPackagesList:Bool = false
+    
     var body: some View {
         Form {
             Section(header: Text("version")){
                 Text("\(appVersion!).\(buildVersion!)")
             }
             Section(header: Text("View files"), content: {
-                Button("View the files list", action: {
+                Button("View the output package list", action: {
+                    print("View package list button pressed")
+                    showPackagesList.toggle()
+                }).sheet(isPresented: $showPackagesList, content: {
+                    NavigationView {
+                        PackageListView()
+                            .navigationBarTitle("PackageList", displayMode: .inline)
+                    }
                 })
             })
             
@@ -28,7 +37,7 @@ struct InfoView: View {
                 })
             })
             Section(header: Text("source code")){
-                Link(destination: URL(string: "https://github.com/powenn/RunCat_iOS_Demo")!, label: {
+                Link(destination: URL(string: "https://github.com/powenn/ModMyIPA")!, label: {
                     HStack{
                         Text("View on Github")
                     }
@@ -38,7 +47,7 @@ struct InfoView: View {
             Section(footer: Text("Made by @powenn"), content: {})
             Section(footer: Text("Output files path : \(outputDirectory.path)"), content: {})
             Section(footer: Text("A nice sentence inspired me\nfrom a nice guy named yammy in Discord\n\"If it's what you want to do,\ndon't let anybody stop you\""), content: {})
-
+            
         }
     }
 }

@@ -22,7 +22,6 @@ struct ContentView: View {
                 })
         }.onAppear(perform: {
             MyFileManager.shared.resetTmp()
-            MyFileManager.shared.resetOutput()
         })
     }
 }

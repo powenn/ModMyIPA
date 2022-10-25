@@ -84,11 +84,19 @@ struct MainView: View {
             Button("Mod it", action: {
                 print("Mod button pressed")
                 print("APPNAME:\(ipafile.app_name)\nPACKAGENAME:\(ipafile.app_executable)\nAPPBUNDLE:\(ipafile.app_bundle)")
+                ipafile.updateInfoPlistValue()
+                ipafile.moveModdedPackage()
+                ipafile.zipToIPA()
                 ipafile.fileName=""
                 ipafile.fileImported = false
             })
             .disabled(!ipafile.fileImported)
             .padding()
+            if isImporting {
+                ProgressView(label: {
+                    Text("Importing IPA File")
+                })
+            }
         }.padding()
     }
 }
