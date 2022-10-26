@@ -17,7 +17,7 @@ struct MainView: View {
     @State var alertTitle:String = ""
     @State var alertMeaasge:String = ""
     
-    @State var showSetInfo:Bool = false
+    @State var showEditInfo:Bool = false
     @State var showSuccessedAlert:Bool = false
     
     func invalidFileAlert(title:String, message:String) {
@@ -74,11 +74,11 @@ struct MainView: View {
                         print(error.localizedDescription)
                     }
                 }
-            Button("Set IPA Info", action: {
-                print("Set IPA_INFO button pressed")
-                showSetInfo.toggle()
-            }).sheet(isPresented: $showSetInfo, content: {
-                SetAppInfoView()
+            Button("Edit IPA Info", action: {
+                print("Edit IPA_INFO button pressed")
+                showEditInfo.toggle()
+            }).sheet(isPresented: $showEditInfo, content: {
+                EditAppInfoView()
             })
             .disabled(!ipafile.fileImported||ipafile.processing)
             .padding()

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SetAppInfoView: View {
+struct EditAppInfoView: View {
     @StateObject var ipafile:IPAFile = .shared
     @Environment(\.presentationMode) var presentationMode
     
@@ -37,8 +37,8 @@ struct SetAppInfoView: View {
     }
 }
 
-struct SetAppInfoView_Previews: PreviewProvider {
+struct EditAppInfoView_Previews: PreviewProvider {
     static var previews: some View {
-        SetAppInfoView()
+        EditAppInfoView()
     }
 }
