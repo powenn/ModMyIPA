@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="appicon" translatesAutoresizingMaskIntoConstraints="NO" id="dIf-OC-wsE">
-                                <rect key="frame" x="138" y="369" width="139" height="158"/>
+                                <rect key="frame" x="137" y="368" width="140" height="161"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -31,6 +31,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="appicon" width="512" height="512"/>
+        <image name="appicon" width="540" height="540"/>
     </resources>
 </document>
