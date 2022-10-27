@@ -12,17 +12,17 @@ class IPAFile:ObservableObject {
     private init() {}
     static let shared = IPAFile()
     
-    @Published var fileURL:URL = URL(fileURLWithPath: "")
+    var fileURL:URL = URL(fileURLWithPath: "")
     @Published var fileName:String = ""
-    @Published var contentDirURL:URL = URL(fileURLWithPath: "")
-    @Published var fileImported:Bool = false
-    @Published var payloadURL:URL = URL(fileURLWithPath: "")
-    @Published var payloadExist:Bool = false
-    @Published var appContentExist:Bool = false
-    @Published var infoPlistExist:Bool = false
-    @Published var app_executableExist:Bool = false
+    var contentDirURL:URL = URL(fileURLWithPath: "")
+    var fileImported:Bool = false
+    var payloadURL:URL = URL(fileURLWithPath: "")
+    var payloadExist:Bool = false
+    var appContentExist:Bool = false
+    var infoPlistExist:Bool = false
+    var app_executableExist:Bool = false
     @Published var appNameInPayload:String = ""
-    @Published var infoPlistPath:URL = URL(fileURLWithPath: "")
+    var infoPlistPath:URL = URL(fileURLWithPath: "")
     
     var config: [String: Any]?
     @Published var app_executable:String = ""
