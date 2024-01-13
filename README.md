@@ -1,6 +1,6 @@
 # ModMyIPA
  
-## An app to modify ipa files so you can multiple install the same app
+## An app that modifies IPA files allows you to install the same app multiple times
 
 ![screenshot][1]
 ![screenshot][2]
