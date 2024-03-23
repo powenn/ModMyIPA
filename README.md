@@ -1,7 +1,7 @@
 # ModMyIPA
 
 <p align="center">
-  <a href="https://github.com/TechUnRestricted/windiskwriter/releases">
+  <a href="https://github.com/powenn/ModMyIPA/releases">
     <img alt="Releases" src="https://img.shields.io/github/downloads/powenn/ModMyIPA/total">
   </a>
   <a href="#">
