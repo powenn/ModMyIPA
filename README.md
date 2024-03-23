@@ -1,5 +1,14 @@
 # ModMyIPA
- 
+
+<p align="center">
+  <a href="https://github.com/TechUnRestricted/windiskwriter/releases">
+    <img alt="Releases" src="https://img.shields.io/github/downloads/powenn/ModMyIPA/total">
+  </a>
+  <a href="#">
+    <img alt="Code Size in Bytes" src="https://img.shields.io/github/languages/code-size/powenn/ModMyIPA">
+  </a>
+</p>
+
 ## An app that modifies IPA files allows you to install the same app multiple times
 
 ![screenshot][1]
