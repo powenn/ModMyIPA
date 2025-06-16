@@ -21,5 +21,3 @@
 [2]:https://github.com/powenn/ModMyIPA/blob/main/Screenshots/02.png
 [3]:https://github.com/powenn/ModMyIPA/blob/main/Screenshots/03.png
 
-
-[![Powered by DartNode](https://dartnode.com/branding/DN-Open-Source-sm.png)](https://dartnode.com "Powered by DartNode - Free VPS for Open Source")
